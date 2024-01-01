@@ -1,10 +1,18 @@
-import { Directive , ElementRef,HostBinding,HostListener,Input,Renderer2} from '@angular/core';
+//import { Directive , ElementRef,HostBinding,HostListener,Input,Renderer2} from '@angular/core';
+import { Directive , ElementRef,Input} from '@angular/core';
 
 @Directive({
   selector: '[appClass]',
   standalone: true
 })
 export class ClassDirective {
+  @Input('appClass') set backgroundColor(color : string){
+    this.elementRef.nativeElement.style.backgroundColor = color;
+
+  };
+  constructor(private elementRef : ElementRef){
+
+  }
 
   //@Input() color : string = 'red';
   // @HostBinding('style.backgroundColor') backgrounColor : string = 'yellow'
@@ -22,12 +30,7 @@ export class ClassDirective {
   // }
 
   // constructor(private elementRef : ElementRef){
-  //   this.elementRef.nativeElement.style.backgrounColor = this.color;
+  //   this.elementRef.nativeElement.style.backgroundColor = this.color;
   // }
-  @Input() set backgroundColor(color : string){
-    this.elementRef.nativeElement.style.backgrounColor = color;
-  }
-  constructor(private elementRef : ElementRef){
-    
-  }
+
 }

@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ClassDirective } from './class.directive';
+import { SetClassDirective } from './set-class.directive';
+import { TimesDirective } from './times.directive';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,ClassDirective],
+  imports: [CommonModule, RouterOutlet,ClassDirective,SetClassDirective,TimesDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
